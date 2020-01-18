@@ -4,6 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Set Up
 You will need to install node and npm. To check if you have these: run `node --version` and `npm --version`
+We are using Angular Material for components. https://material.angular.io/
 
 ## Development server
 
