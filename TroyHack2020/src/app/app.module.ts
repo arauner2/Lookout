@@ -9,7 +9,9 @@ import { HomeComponent } from './components/home/home.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
 import { AngularFireModule } from '@angular/fire';
-import { AngularFireStoreModule } from '@angular/firestore';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { IncidentListComponent } from './components/incident-list/incident-list.component';
+import { IncidentFormComponent } from './components/incident-form/incident-form.component';
 
 const firebaseConfig = {
   apiKey: "AIzaSyA54EFJXhzRQgc5e0P-d6Ug44E3sG5gnPs",
@@ -24,12 +26,14 @@ const firebaseConfig = {
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    IncidentListComponent,
+    IncidentFormComponent
   ],
   imports: [
     BrowserModule,
     AngularFireModule.initializeApp(firebaseConfig),
-    AngularFireStoreModule,
+    AngularFirestoreModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     MatToolbarModule
