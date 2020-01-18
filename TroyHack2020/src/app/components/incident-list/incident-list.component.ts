@@ -12,6 +12,7 @@ export class IncidentListComponent implements OnInit {
   constructor(private is : IncidentService) { }
 
   incidents: Array<Incident>;
+  displayedColumns: string[] = ['Subject', 'Sender', 'Details', 'Date', 'Votes'];
 
   ngOnInit() {
     this.is.getIncidents().get().subscribe(data => {
