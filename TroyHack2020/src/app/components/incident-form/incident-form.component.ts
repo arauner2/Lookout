@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-incident-form',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IncidentFormComponent implements OnInit {
 
+  incidentForm: FormGroup
+  
   constructor() { }
 
   ngOnInit() {
+    this.incidentForm = new FormGroup({
+      subject: new FormControl('', Validators.required),
+      sender: new FormControl('', Validators.email),
+      details: new FormControl(''),
+      send_date: new FormControl(''),
+    });
   }
 
 }

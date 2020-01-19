@@ -1,1 +1,29 @@
-<p>incident-form works!</p>
+<mat-card>
+    <mat-card-title>Submit Phishing Email</mat-card-title>
+    <form [formGroup]="incidentForm">
+        <div class="top-row">
+            <mat-form-field class="formField" floatLabel="never">
+                <p id="label">Subject</p>
+                <input matInput [formControlName]="subject">
+            </mat-form-field>
+        
+            <mat-form-field class="formField" floatLabel="never">
+                <p id="label">Sender</p>
+                <input matInput [formControlName]="sender">
+            </mat-form-field>
+
+            <mat-form-field class="formField" floatLabel="never">
+                <p id="label">Date</p>
+                <input matInput [matDatepicker]="picker" [formControlName]="send_date">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+        </div>
+    
+        <mat-form-field class="formField" floatLabel="never">
+            <p id="label">Details</p>
+            <textarea matInput [formControlName]="details"></textarea>
+        </mat-form-field>
+    
+    </form>
+</mat-card>
