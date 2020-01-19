@@ -22,11 +22,11 @@
           </ng-container>
           <ng-container matColumnDef="Upvote">
             <th mat-header-cell *matHeaderCellDef> </th>
-            <button mat-mini-fab mat-cell *matCellDef="let element" (click)="upvote(element.id, element.votes)">+</button>
+            <button mat-mini-fab mat-cell *matCellDef="let element" color="primary" (click)="upvote(element.id, element.votes)">+</button>
           </ng-container>
           <ng-container matColumnDef="Downvote">
             <th mat-header-cell *matHeaderCellDef> </th>
-            <button mat-mini-fab mat-cell *matCellDef="let element" (click)="downvote(element.id, element.votes)">-</button>
+            <button mat-mini-fab mat-cell *matCellDef="let element" color="#9a1a1a" (click)="downvote(element.id, element.votes)">-</button>
           </ng-container>
           <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
           <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
