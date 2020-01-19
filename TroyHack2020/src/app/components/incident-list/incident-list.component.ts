@@ -23,7 +23,7 @@ export class IncidentListComponent implements OnInit {
         let incident = new Incident(obj.subject, obj.sender, obj.details, obj.votes, obj.send_date, id);
         incidentList.push(incident);
       }
-      this.incidents = incidentList;
+      this.incidents = incidentList.sort((a,b) => (b.votes - a.votes));
     });
   }
 
