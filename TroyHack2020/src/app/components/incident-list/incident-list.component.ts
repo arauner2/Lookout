@@ -15,15 +15,15 @@ export class IncidentListComponent implements OnInit {
   displayedColumns: string[] = ['Subject', 'Sender', 'Details', 'Date', 'Votes'];
 
   ngOnInit() {
-    this.is.getIncidents().get().subscribe(data => {
+    this.is.getIncidents().snapshotChanges().subscribe(data => {
       let incidentList = [];
-      for(let i = 0; i < data.docs.length; i++) {
-          let obj = data.docs[i].data();
-          let incident = new Incident(obj.subject, obj.sender, obj.details, obj.votes, obj.send_date);
-          incidentList.push(incident);
+      for(let i = 0; i < data.length; i++) {
+        let obj = data[i].payload.doc.data();
+        let incident = new Incident(obj.subject, obj.sender, obj.details, obj.votes, obj.send_date);
+        incidentList.push(incident);
       }
       this.incidents = incidentList;
-    })
+    });
   }
 
 }
