@@ -19,7 +19,8 @@ export class IncidentListComponent implements OnInit {
       let incidentList = [];
       for(let i = 0; i < data.length; i++) {
         let obj = data[i].payload.doc.data();
-        let incident = new Incident(obj.subject, obj.sender, obj.details, obj.votes, obj.send_date);
+        let id = data[i].payload.doc.id;
+        let incident = new Incident(obj.subject, obj.sender, obj.details, obj.votes, obj.send_date, id);
         incidentList.push(incident);
       }
       this.incidents = incidentList;
