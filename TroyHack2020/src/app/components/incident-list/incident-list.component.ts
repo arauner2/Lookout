@@ -12,7 +12,7 @@ export class IncidentListComponent implements OnInit {
   constructor(private is : IncidentService) { }
 
   incidents: Array<Incident>;
-  displayedColumns: string[] = ['Subject', 'Sender', 'Details', 'Date', 'Votes'];
+  displayedColumns: string[] = ['Subject', 'Sender', 'Details', 'Date', 'Votes', 'Upvote', 'Downvote'];
 
   ngOnInit() {
     this.is.getIncidents().snapshotChanges().subscribe(data => {
@@ -25,6 +25,14 @@ export class IncidentListComponent implements OnInit {
       }
       this.incidents = incidentList;
     });
+  }
+
+  upvote(id: string, votes: number){
+    this.is.updateIncident(id, {votes: votes + 1});
+  }
+
+  downvote(id: string, votes: number){
+    this.is.updateIncident(id, {votes: votes - 1});
   }
 
 }

@@ -16,4 +16,8 @@ export class IncidentService {
   postIncident(incident: Incident): void {
     this.db.collection("incident").add(incident);
   }
+
+  updateIncident(id: string, update: any): void {
+    this.db.collection("incident").doc(id).update(update);
+  }
 }
