@@ -1,6 +1,6 @@
-<mat-card>
-    <mat-card-title>Submit Phishing Email</mat-card-title>
-    <form [formGroup]="incidentForm">
+<h1 mat-dialog-title>Submit Phishing Email</h1>
+<div mat-dialog-content>
+    <form [formGroup]="data">
         <div class="top-row">
             <mat-form-field class="formField" floatLabel="never">
                 <p id="label">Subject</p>
@@ -26,4 +26,8 @@
         </mat-form-field>
     
     </form>
-</mat-card>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancel</button>
+  <button mat-button color="primary" (click)="createIncident()" cdkFocusInitial>Submit</button>
+</div>
