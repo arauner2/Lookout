@@ -2,10 +2,17 @@
     background: #9a1a1a;
     color: #fff;
     justify-content: center;
+    text-align: right;
+    align-content: center;
 
 }
 
 .body{
     background-image: url('/Users/a3506/Documents/GitHub/TroyHack2020/TroyHack2020/src/assets/backgrnd.png');
+}
+
+.img{
+    
+    overflow: hidden;
 }
 
