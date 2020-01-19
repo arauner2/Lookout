@@ -12,7 +12,7 @@
 }
 
 .img{
-    
+    clip: rect(0xp,150xp,0xp,150xp);
     overflow: hidden;
 }
 
