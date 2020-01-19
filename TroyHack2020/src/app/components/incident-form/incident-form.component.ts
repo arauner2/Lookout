@@ -1,22 +1,38 @@
-import { Component, Inject } from '@angular/core';
-import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { FormGroup } from '@angular/forms';
+import { Component, OnInit} from '@angular/core';
+import { MatDialogRef } from '@angular/material/dialog';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Incident } from '../../models/incident';
+import { IncidentService } from "../../services/incident.service";
 
 @Component({
   selector: 'app-incident-form',
   templateUrl: './incident-form.component.html',
   styleUrls: ['./incident-form.component.css']
 })
-export class IncidentFormComponent {
+export class IncidentFormComponent implements OnInit{
 
-  constructor(public dialogRef: MatDialogRef<IncidentFormComponent>, @Inject(MAT_DIALOG_DATA) public data: FormGroup) { }
+  incidentForm: FormGroup;
+
+  constructor(public dialogRef: MatDialogRef<IncidentFormComponent>, public is: IncidentService) { }
+
+  ngOnInit(): void {
+    this.incidentForm = new FormGroup({
+      subject: new FormControl('', Validators.required),
+      sender: new FormControl('', Validators.required),
+      details: new FormControl(''),
+      send_date: new FormControl(''),
+    })
+  }
 
   onNoClick(): void {
     this.dialogRef.close();
   }
 
-  createIncident(): void {
-    //TODO: create
+  onSubmit(): void {
+    let incident = this.incidentForm.value as Incident;
+    incident.votes = 0;
+    this.is.postIncident(incident);
+    
     this.dialogRef.close();
   }
 

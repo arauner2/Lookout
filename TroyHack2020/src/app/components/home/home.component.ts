@@ -14,13 +14,7 @@ export class HomeComponent {
 
   openDialog(): void {
     const dialogRef = this.dialog.open(IncidentFormComponent, {
-      width: '800px',
-      data: new FormGroup({
-        subject: new FormControl('', Validators.required),
-        sender: new FormControl('', Validators.email),
-        details: new FormControl(''),
-        send_date: new FormControl(''),
-      })
+      width: '800px'
     });
 
     dialogRef.afterClosed().subscribe(result => {

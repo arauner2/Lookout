@@ -22,7 +22,6 @@ export class IncidentListComponent implements OnInit {
           let incident = new Incident(obj.subject, obj.sender, obj.details, obj.votes, obj.send_date);
           incidentList.push(incident);
       }
-      console.log(incidentList);
       this.incidents = incidentList;
     })
   }
