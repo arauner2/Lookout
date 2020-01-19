@@ -1,9 +1,16 @@
+@font-face {
+    font-family: Nebula-Regular;
+    src: url('/assets/Nebula-Regular.otf');
+}
+
 .mat-toolbar.mat-primary {
     background: #9a1a1a;
     color: #fff;
     justify-content: center;
     text-align: right;
     align-content: center;
+    font-family: Nebula-Regular;
+    
 
 }
 
@@ -11,8 +18,5 @@
     background-image: url('/Users/a3506/Documents/GitHub/TroyHack2020/TroyHack2020/src/assets/backgrnd.png');
 }
 
-.img{
-    clip: rect(0xp,150xp,0xp,150xp);
-    overflow: hidden;
-}
+
 
